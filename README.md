@@ -1,5 +1,7 @@
 # Grid.css
 
+<img src="https://badgen.net/badgesize/gzip/smrlo/grid.css/master/grid.min.css">
+
 Grid.css is a ultra-lightweight and responsive CSS grid.
 
 The goal of the project is to create a universal and easy-to-use responsive grid, with no-frills, that adds no unnecessary styles and with the mimimun footprint as possible - so as to be the base for any project.
