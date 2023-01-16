@@ -5,7 +5,7 @@ Grid.css is a ultra-lightweight and responsive CSS grid.
 The goal of the project is to create a universal and easy-to-use responsive grid, with no-frills, that adds no unnecessary styles and with the mimimun footprint as possible - so as to be the base for any project.
 
 Highlights:
-- Ultra-lightweight (~1KB gzipped)
+- Ultra-lightweight (~0.6KB gzipped)
 - No-frills, no unnecessary styles
 - Very flexible and easy to use
 - Responsive, mobile-first, flexbox based
