@@ -1,0 +1,7 @@
+# system and editor
+.DS_store
+.vscode
+
+# other files and folders
+test/
+tools
