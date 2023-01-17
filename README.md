@@ -1,6 +1,6 @@
 # Grid.css
 
-<img src="https://badgen.net/badgesize/gzip/smrlo/grid.css/master/grid.min.css">
+<a href="https://github.com/smrlo/grid.css/"><img src="https://badgen.net/badgesize/gzip/smrlo/grid.css/master/grid.min.css" /></a>
 
 Grid.css is a ultra-lightweight and responsive CSS grid.
 
