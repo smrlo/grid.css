@@ -16,12 +16,17 @@ Highlights:
 
 ## Installation
 
-Include grid.css in your website's &lt;head&gt; before any other stylesheet:
+Include `grid.css` in your website's `<head>` before any other stylesheet. You can include it manually or alternatively from a CDN.
 
+#### Manually
 ```html
 <link rel="stylesheet" href="grid.min.css">
 ```
 
+#### From CDN
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/smrlo/grid.css/grid.min.css">
+```
 
 ## Setup
 
