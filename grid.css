@@ -1,4 +1,4 @@
-/*! Grid.css v1.0 | https://github.com/smrlo/grid.css | MIT License */
+/*! Grid.css v1.1 | https://github.com/smrlo/grid.css | MIT License */
 
 
 /* GENERAL
@@ -31,6 +31,7 @@ body {
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 0 -15px;
 }
 
