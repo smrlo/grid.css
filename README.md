@@ -1,11 +1,11 @@
 # Grid.css
 
-Grid.css is a ultra-lightweight and responsive CSS grid.
+Grid.css is an ultra-lightweight and responsive CSS grid.
 
-The goal of the project is to create a universal and easy-to-use responsive grid, with no-frills, that adds no unnecessary styles and with the mimimun footprint as possible - so as to be the base for any project.
+The goal of the project is to create a universal and easy-to-use responsive grid, with no-frills, that adds no unnecessary styles and with the minimum footprint as possible - so as to be the base for any project.
 
 Highlights:
-- Ultra-lightweight (~0.6KB gzipped)
+- Ultra-lightweight (~0.6KB gzipped, ~2KB minified)
 - No-frills, no unnecessary styles
 - Very flexible and easy to use
 - Responsive, mobile-first, flexbox based
@@ -14,7 +14,7 @@ Highlights:
 
 ## Installation
 
-Include `grid.css` in your website's `<head>` before any other stylesheet. You can include it manually or alternatively from a CDN.
+Include `grid.min.css` in your website's `<head>` before any other stylesheet. You can include it manually or alternatively from a CDN.
 
 #### Manually
 ```html
@@ -28,7 +28,7 @@ Include `grid.css` in your website's `<head>` before any other stylesheet. You c
 
 ## Setup
 
-Grid.css has a responsive and mobile-first `12-column` layout, that can be set up with a default width or a full page width (see maximum width at the various breakpoint in the table below).
+Grid.css has a responsive and mobile-first `12-column` layout, that can be set up with a default width or a full page width (see maximum width at the various breakpoints in the table below).
 
 To set up the layout you first define the container, then within the container add the rows, and finally within each row add and define the columns.
 
@@ -80,7 +80,7 @@ Replace `*` with a number between `1-12` to define a specific column's width (e.
 ## Breakpoints
 
 
-#### Container max-width
+#### Container width
 
 |                   | <576px   | ≥576px   | ≥768px   | ≥992px   | ≥1200px  | ≥1400px  |
 |-------------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
@@ -92,8 +92,7 @@ Replace `*` with a number between `1-12` to define a specific column's width (e.
 
 | Column          | Screen size       |
 | --------------- | :---------------: |
-| `c-*`           | default           |
-| `c-*`           | <576px            |
+| `c-*`           | default (<576px)  |
 | `s-*`           | ≥576px            |
 | `m-*`           | ≥768px            |
 | `l-*`           | ≥992px            |
