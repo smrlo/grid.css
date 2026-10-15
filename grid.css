@@ -1,21 +1,23 @@
-/*! Grid.css v1.2 | https://github.com/smrlo/grid.css | MIT License */
+/*! Grid.css v2.0 | https://github.com/smrlo/grid.css | MIT License */
 
 
 /* GENERAL
 -------------------------------------------------- */
-*,
-::after,
-::before {
+/* --gutter: space between two columns (default 30px), set it on any parent to change it */
+.container,
+.container-full,
+.col {
   box-sizing: border-box;
 }
 
 
 /* CONTAINERS
 -------------------------------------------------- */
-[class^="container"] {
+.container,
+.container-full {
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 calc(var(--gutter, 30px) / 2);
 }
 
 
@@ -24,19 +26,19 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px;
+  margin: 0 calc(var(--gutter, 30px) / -2);
 }
 
 
 /* COLUMNS
 -------------------------------------------------- */
 .col {
-  padding: 0 15px;
+  padding: 0 calc(var(--gutter, 30px) / 2);
   min-width: 0;
   flex: 0 0 auto;
 }
 
-.col.c-fx {flex: 1 1 auto;}
+.col.c-fx {flex: 1;}
 .c-1 {width: 8.3333%;}
 .c-2 {width: 16.6667%;}
 .c-3 {width: 25%;}
@@ -54,13 +56,15 @@
 
 /* MEDIAQUERIES
 -------------------------------------------------- */
+/* Order matters inside each breakpoint: show again > fx > widths > hide */
+
 @media (min-width: 576px) {
   .container {width: 540px;}
-  .col[class*=" s-"] {
+  .col:is(.s-1,.s-2,.s-3,.s-4,.s-5,.s-6,.s-7,.s-8,.s-9,.s-10,.s-11,.s-12,.s-fx) {
     display: block;
     flex: 0 0 auto;
   }
-  .col.s-fx {flex: 1 1 auto;}
+  .col.s-fx {flex: 1;}
   .s-1 {width: 8.3333%;}
   .s-2 {width: 16.6667%;}
   .s-3 {width: 25%;}
@@ -78,11 +82,11 @@
 
 @media (min-width: 768px) {
   .container {width: 720px;}
-  .col[class*=" m-"] {
+  .col:is(.m-1,.m-2,.m-3,.m-4,.m-5,.m-6,.m-7,.m-8,.m-9,.m-10,.m-11,.m-12,.m-fx) {
     display: block;
     flex: 0 0 auto;
   }
-  .col.m-fx {flex: 1 1 auto;}
+  .col.m-fx {flex: 1;}
   .m-1 {width: 8.3333%;}
   .m-2 {width: 16.6667%;}
   .m-3 {width: 25%;}
@@ -100,11 +104,11 @@
 
 @media (min-width: 992px) {
   .container {width: 960px;}
-  .col[class*=" l-"] {
+  .col:is(.l-1,.l-2,.l-3,.l-4,.l-5,.l-6,.l-7,.l-8,.l-9,.l-10,.l-11,.l-12,.l-fx) {
     display: block;
     flex: 0 0 auto;
   }
-  .col.l-fx {flex: 1 1 auto;}
+  .col.l-fx {flex: 1;}
   .l-1 {width: 8.3333%;}
   .l-2 {width: 16.6667%;}
   .l-3 {width: 25%;}
@@ -122,11 +126,11 @@
 
 @media (min-width: 1200px) {
   .container {width: 1140px;}
-  .col[class*=" xl-"] {
+  .col:is(.xl-1,.xl-2,.xl-3,.xl-4,.xl-5,.xl-6,.xl-7,.xl-8,.xl-9,.xl-10,.xl-11,.xl-12,.xl-fx) {
     display: block;
     flex: 0 0 auto;
   }
-  .col.xl-fx {flex: 1 1 auto;}
+  .col.xl-fx {flex: 1;}
   .xl-1 {width: 8.3333%;}
   .xl-2 {width: 16.6667%;}
   .xl-3 {width: 25%;}
@@ -144,11 +148,11 @@
 
 @media (min-width: 1400px) {
   .container {width: 1320px;}
-  .col[class*=" xxl-"] {
+  .col:is(.xxl-1,.xxl-2,.xxl-3,.xxl-4,.xxl-5,.xxl-6,.xxl-7,.xxl-8,.xxl-9,.xxl-10,.xxl-11,.xxl-12,.xxl-fx) {
     display: block;
     flex: 0 0 auto;
   }
-  .col.xxl-fx {flex: 1 1 auto;}
+  .col.xxl-fx {flex: 1;}
   .xxl-1 {width: 8.3333%;}
   .xxl-2 {width: 16.6667%;}
   .xxl-3 {width: 25%;}

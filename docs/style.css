@@ -132,12 +132,7 @@ table .code-text {
 }
 
 .row#grid-demo {
-  margin-left: -5px;
-  margin-right: -5px;
-}
-
-.row#grid-demo .col {
-  padding: 0 5px !important;
+  --gutter: 10px;
 }
 
 .demo span {

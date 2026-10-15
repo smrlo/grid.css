@@ -32,7 +32,7 @@
     <meta name="twitter:description" content="Tiny, responsive and no-frills CSS framework."/>
 
     <!-- Grid.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/smrlo/grid.css/grid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/smrlo/grid.css@2.0/grid.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -113,16 +113,24 @@
         </div>
         <div class="col c-12">
           <p>
-            To get started, simply include <code class="code-text">grid.min.css</code> in your website's <code class="code-text">&lt;head&gt;</code> before any other stylesheet. You can include it manually or alternatively from a CDN.
+            To get started, simply include <code class="code-text">grid.min.css</code> in your website's <code class="code-text">&lt;head&gt;</code> before any other stylesheet, so your own styles can override it. You can include it manually or alternatively from a CDN.
           </p>
+          <p>
+            Make sure your page also has the viewport meta tag, otherwise phones render the page as if it were ~980px wide and the grid won't respond to the screen size.
+          </p>
+          <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre>
           <div class="space-1"></div>
         </div>
         <div class="col c-12">
           <h6>Manually</h6>
+          <p>Download <a href="https://github.com/smrlo/grid.css/blob/main/grid.min.css" target="_blank">grid.min.css</a> and add it to your project:</p>
           <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;grid.min.css&quot;&gt;</code></pre>
           <div class="space-1"></div>
           <h6>From CDN</h6>
-          <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/smrlo/grid.css/grid.min.css&quot;&gt;</code></pre>
+          <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/smrlo/grid.css@2.0/grid.min.css&quot;&gt;</code></pre>
+          <p>
+            The version in the link (<code class="code-text">@2.0</code>) keeps your site on that release, so future updates never change your layout unexpectedly. You can drop it to always get the latest version, but it's not recommended in production.
+          </p>
         </div>
       </div>
 
@@ -161,7 +169,7 @@
           <div class="space-1"></div>
           <h6>3. Finally add and define the columns</h6>
           <p>
-            To set up a column add the class <code class="code-text">col</code> and then define the various column's size at the different breakpoints with <code class="code-text">c-*</code>, <code class="code-text">s-*</code>, <code class="code-text">m-*</code>, <code class="code-text">l-*</code>, <code class="code-text">xl-*</code>, <code class="code-text">xxl-*</code>. Replace <code class="code-text">*</code> with a number between <code class="code-text">1-12</code> to define a specific column's width (e.g. c-2); use 0 to hide the column (i.e. c-0); or use <code class="code-text">fx</code> for a flexible column (i.e. c-fx). The default size <code class="code-text">c-*</code> must always be defined.
+            To set up a column add the class <code class="code-text">col</code> and then define the various column's size at the different breakpoints with <code class="code-text">c-*</code>, <code class="code-text">s-*</code>, <code class="code-text">m-*</code>, <code class="code-text">l-*</code>, <code class="code-text">xl-*</code>, <code class="code-text">xxl-*</code>. Replace <code class="code-text">*</code> with a number between <code class="code-text">1-12</code> to define a specific column's width (e.g. c-2); use 0 to hide the column (i.e. c-0); or use <code class="code-text">fx</code> for a flexible column (i.e. c-fx), which takes an equal share of the space left in the row. The default size <code class="code-text">c-*</code> must always be defined. Classes can be written in any order.
           </p>
           <p>
             Example: using <code class="code-text">c-2</code> instructs the column to span for a width of 2 spaces; <code class="code-text">c-5</code> instructs the column to span for a width of 5 spaces; <code class="code-text">xl-2</code> instructs the column to span for a width of 2 spaces when the screen size is ≥1200px; using <code class="code-text">xl-2 xxl-4</code> instructs the column to span for a width of 2 spaces when the screen size is ≥1200px, then 4 spaces when the screen size is ≥ 1400px.
@@ -173,6 +181,16 @@
     &lt;div class=&quot;col c-0 s-0 m-3 l-4 xl-4 xxl-0&quot;&gt; ... &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+          <p>
+            Grid.css sets <code class="code-text">display</code> on columns to show and hide them, so avoid setting <code class="code-text">display</code> on a <code class="code-text">.col</code> yourself (e.g. to make it a flex container): put your styles on an element inside the column instead.
+          </p>
+          <div class="space-1"></div>
+          <h6>Gutter</h6>
+          <p>
+            The space between columns is <code class="code-text">30px</code> by default. To change it, set the <code class="code-text">--gutter</code> variable on the page or on any container (always use a unit, e.g. <code class="code-text">0px</code>).
+          </p>
+          <pre><code>:root { --gutter: 20px; }        /* whole page */
+.my-section { --gutter: 0px; }   /* just one section */</code></pre>
         </div>
       </div>
 
